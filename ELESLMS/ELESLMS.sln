@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELESLMS", "ELESLMS.csproj", "{F43F1FED-F677-4A0B-9353-3B046F73990F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F43F1FED-F677-4A0B-9353-3B046F73990F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43F1FED-F677-4A0B-9353-3B046F73990F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F43F1FED-F677-4A0B-9353-3B046F73990F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43F1FED-F677-4A0B-9353-3B046F73990F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {568DD7BB-7671-44F3-8C95-E125BE4A3965}
+	EndGlobalSection
+EndGlobal
