@@ -19,8 +19,8 @@ namespace ELESLMS.Data
         public DateTime CreatedTime { get; set; }
         [Required]
         public DateTime Deadline { get; set; }
-        [Required]
-        public User CreatedBy { get; set; }
-        [Required]
+        public ICollection<Grade> Grades { get; set; }
+        public int CourseId { get; set; }
+        public Course Course { get; set; }
     }
 }

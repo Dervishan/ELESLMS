@@ -33,12 +33,16 @@ namespace ELESLMS.Data
             modelBuilder.Entity<StudentCourse>().HasOne<Student>(sc => sc.Student).WithMany(s => s.StudentCourses).HasForeignKey(sc => sc.StudentId);
             modelBuilder.Entity<StudentCourse>().HasOne<Course>(sc => sc.Course).WithMany(s => s.StudentCourses).HasForeignKey(sc => sc.CourseId);
             modelBuilder.Entity<Course>().HasOne<Teacher>(t => t.Teacher).WithMany(c => c.Courses).HasForeignKey(f => f.TeacherId);
+            modelBuilder.Entity<Grade>().HasOne<Assignment>(a => a.Assignment).WithMany(g => g.Grades).HasForeignKey(f => f.AssignmentId);
+            modelBuilder.Entity<Grade>().HasOne<Course>(c => c.Course).WithMany(g => g.Grades).HasForeignKey(f => f.CourseId);
+            modelBuilder.Entity<Grade>().HasOne<Student>(s => s.Student).WithMany(g => g.Grades).HasForeignKey(f => f.StudentId);
+            modelBuilder.Entity<Grade>().HasOne<Teacher>(t => t.Teacher).WithMany(g => g.Grades).HasForeignKey(f => f.TeacherId);
+            modelBuilder.Entity<Assignment>().HasOne<Course>(c => c.Course).WithMany(a => a.Assignments).HasForeignKey(f => f.CourseId);
             modelBuilder.Entity<Role>().HasData(
                 new Role
                 {
                     Id = 1,
-                    Name = "Admin",
-                    ca
+                    Name = "Admin"
                 }
             );
             modelBuilder.Entity<Role>().HasData(

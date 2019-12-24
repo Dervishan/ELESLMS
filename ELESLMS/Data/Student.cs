@@ -7,8 +7,14 @@ namespace ELESLMS.Data
 {
     public class Student : User
     {
+        public Student()
+        {
+            RoleId = 2;
+        }
         [Required]
         public int Number { get; set; }
         public IList<StudentCourse> StudentCourses { get; set; }
+        public ICollection<Grade> Grades { get; set; }
+        public ICollection<Post> Posts { get; set; }
     }
 }
