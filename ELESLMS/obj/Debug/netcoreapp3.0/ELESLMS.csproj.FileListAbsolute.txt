@@ -48,3 +48,5 @@ C:\Users\zynct\Desktop\ELESLMS\ELESLMS\bin\Debug\netcoreapp3.0\ELESLMS.runtimeco
 C:\Users\zynct\Desktop\ELESLMS\ELESLMS\bin\Debug\netcoreapp3.0\ELESLMS.dll
 C:\Users\zynct\Desktop\ELESLMS\ELESLMS\bin\Debug\netcoreapp3.0\ELESLMS.pdb
 C:\Users\zynct\Desktop\ELESLMS\ELESLMS\obj\Debug\netcoreapp3.0\ELESLMS.dll
+C:\Users\zynct\Desktop\ELESLMS\ELESLMS\obj\Debug\netcoreapp3.0\UI\LoginWindow.g.cs
+C:\Users\zynct\Desktop\ELESLMS\ELESLMS\obj\Debug\netcoreapp3.0\UI\LoginWindow.baml

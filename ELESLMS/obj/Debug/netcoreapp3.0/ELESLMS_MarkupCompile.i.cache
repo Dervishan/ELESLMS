@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
 C:\Users\zynct\Desktop\ELESLMS\ELESLMS\App.xaml
-11151548125
+2-1043141275
 
-17760493184
+181632184449
 210-616967071
-MainWindow.xaml;
+UI\LoginWindow.xaml;UI\MainWindow.xaml;
 
-False
+True
 
