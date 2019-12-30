@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace ELESLMS.Data
@@ -14,11 +15,7 @@ namespace ELESLMS.Data
         public string Name { get; set; }
         public int AssignmentId { get; set; }
         public Assignment Assignment { get; set; }
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
-        public int StudentId { get; set; }
-        public Student Student { get; set; }
-        public int TeacherId { get; set; }
-        public Teacher Teacher { get; set; }
+        public int StudentCourseId { get; set; }
+        public StudentCourse StudentCourse { get; set; }
     }
 }

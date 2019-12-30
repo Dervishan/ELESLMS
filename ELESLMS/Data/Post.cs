@@ -15,11 +15,9 @@ namespace ELESLMS.Data
         public string Header { get; set; }
         [Required]
         public string Content { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime CreatedDate { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime CreatedTime { get; set; }
-        public int StudentId { get; set; }
-        public Student Student { get; set; }
-        public int TeacherId { get; set; }
-        public Teacher Teacher { get; set; }
+        public DateTime LastUpdated { get; set; }
     }
 }

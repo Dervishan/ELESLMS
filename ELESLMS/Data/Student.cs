@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace ELESLMS.Data
@@ -13,8 +14,7 @@ namespace ELESLMS.Data
         }
         [Required]
         public int Number { get; set; }
+        [InverseProperty("Student")]
         public IList<StudentCourse> StudentCourses { get; set; }
-        public ICollection<Grade> Grades { get; set; }
-        public ICollection<Post> Posts { get; set; }
     }
 }

@@ -13,12 +13,15 @@ namespace ELESLMS.Data
         [Required]
         [StringLength(50,MinimumLength =2)]
         public string Name { get; set; }
+        public string Description { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime OpeningDate { get; set; }
         public bool IsApproved { get; set; }
-        [ForeignKey("Teacher")]
         public int TeacherId { get; set; }
         public Teacher Teacher { get; set; }
+        [InverseProperty("Course")]
         public IList<StudentCourse> StudentCourses { get; set; }
-        public ICollection<Grade> Grades { get; set; }
+        [InverseProperty("Course")]
         public ICollection<Assignment> Assignments { get; set; }
     }
 }

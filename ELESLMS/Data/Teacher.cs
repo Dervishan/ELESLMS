@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace ELESLMS.Data
@@ -10,8 +11,8 @@ namespace ELESLMS.Data
         {
             RoleId = 3;
         }
+        public string Subject { get; set; }
+        [InverseProperty("Teacher")]
         public ICollection<Course> Courses { get; set; }
-        public ICollection<Grade> Grades { get; set; }
-        public ICollection<Post> Posts { get; set; }
     }
 }

@@ -15,10 +15,12 @@ namespace ELESLMS.Data
         public string Name { get; set; }
         [Required]
         public string Definition { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime CreatedTime { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime CreatedDate { get; set; }
         [Required]
         public DateTime Deadline { get; set; }
+        public int PointsPossible { get; set; }
+        [InverseProperty("Assignment")]
         public ICollection<Grade> Grades { get; set; }
         public int CourseId { get; set; }
         public Course Course { get; set; }
