@@ -24,4 +24,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Syncfusion.Shared.Wpf">
+      <HintPath>D:\Program Files (x86)\Syncfusion\Essential Studio\WPF\17.3.0.14\Assemblies\4.6\Syncfusion.Shared.WPF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

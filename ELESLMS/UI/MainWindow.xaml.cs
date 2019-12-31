@@ -20,6 +20,8 @@ namespace ELESLMS.UI
         public MainWindow()
         {
             InitializeComponent();
+            LoginPage loginPage = new LoginPage();
+            MainFrame.Navigate(loginPage);
         }
     }
 }
