@@ -30,4 +30,10 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="UI\LoginPage.xaml">
+      <CustomToolNamespace></CustomToolNamespace>
+    </Page>
+  </ItemGroup>
+
 </Project>

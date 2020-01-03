@@ -7,7 +7,7 @@ namespace ELESLMS.Data
 {
     public class Teacher : User
     {
-        public Teacher()
+        public Teacher() : base()
         {
             RoleId = 3;
         }

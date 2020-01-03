@@ -65,9 +65,6 @@ namespace ELESLMS.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsApproved")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -85,6 +82,32 @@ namespace ELESLMS.Migrations
                     b.HasIndex("TeacherId");
 
                     b.ToTable("Courses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "efso ders",
+                            Name = "cet 301",
+                            OpeningDate = new DateTime(2020, 1, 3, 7, 3, 16, 259, DateTimeKind.Local).AddTicks(9498),
+                            TeacherId = 3
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "efso dersin ikincisi",
+                            Name = "cet 322",
+                            OpeningDate = new DateTime(2020, 1, 3, 7, 3, 16, 260, DateTimeKind.Local).AddTicks(296),
+                            TeacherId = 3
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "muttesem ders",
+                            Name = "cet 314",
+                            OpeningDate = new DateTime(2020, 1, 3, 7, 3, 16, 260, DateTimeKind.Local).AddTicks(314),
+                            TeacherId = 9
+                        });
                 });
 
             modelBuilder.Entity("ELESLMS.Data.Grade", b =>
@@ -242,10 +265,16 @@ namespace ELESLMS.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SecretAnswer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SecretQuestion")
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
@@ -264,20 +293,20 @@ namespace ELESLMS.Migrations
 
                     b.ToTable("Users");
 
-                    b.HasDiscriminator<int>("RoleId").HasValue(0);
+                    b.HasDiscriminator<int>("RoleId").HasValue(1);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            CreatedTime = new DateTime(2019, 12, 30, 22, 6, 14, 237, DateTimeKind.Local).AddTicks(6070),
+                            CreatedTime = new DateTime(2020, 1, 3, 7, 3, 16, 258, DateTimeKind.Local).AddTicks(4147),
                             EMail = "admin@admin.com",
                             IsDeleted = false,
                             LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "First",
                             Password = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
-                            PhoneNumber = 0,
                             RoleId = 1,
+                            SecretQuestion = 0,
                             Surname = "User",
                             UserName = "admin"
                         });
@@ -287,8 +316,8 @@ namespace ELESLMS.Migrations
                 {
                     b.HasBaseType("ELESLMS.Data.User");
 
-                    b.Property<int>("Number")
-                        .HasColumnType("int");
+                    b.Property<string>("Number")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue(2);
 
@@ -296,17 +325,77 @@ namespace ELESLMS.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedTime = new DateTime(2019, 12, 30, 22, 6, 14, 238, DateTimeKind.Local).AddTicks(6493),
+                            CreatedTime = new DateTime(2020, 1, 3, 7, 3, 16, 259, DateTimeKind.Local).AddTicks(5027),
                             EMail = "yarali89@gmail.com",
                             IsDeleted = false,
                             LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Dervişhan",
                             Password = "d8303dd66f288068d9ece3a38092cd3eb16b93672b332f4ae8baa927cfc1aa4e",
-                            PhoneNumber = 0,
                             RoleId = 2,
+                            SecretQuestion = 0,
                             Surname = "Sezer",
                             UserName = "Yarali89",
-                            Number = 321
+                            Number = "321"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedTime = new DateTime(2020, 1, 3, 7, 3, 16, 259, DateTimeKind.Local).AddTicks(5730),
+                            EMail = "yakisikli1@gmail.com",
+                            IsDeleted = false,
+                            LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "David",
+                            Password = "e22df7824352fc6caaa36d2132faa4f974a9f8cd27774b6a1727a9ae7f0e16ab",
+                            RoleId = 2,
+                            SecretQuestion = 0,
+                            Surname = "Bechkham",
+                            UserName = "Yakisikli1",
+                            Number = "123"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedTime = new DateTime(2020, 1, 3, 7, 3, 16, 259, DateTimeKind.Local).AddTicks(5833),
+                            EMail = "tsubasa333@gmail.com",
+                            IsDeleted = false,
+                            LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Cristiano",
+                            Password = "0ef15c9323f8f3e16f9ee0f37f6a4bcc18040d210f45d7ada3074650d11d8834",
+                            RoleId = 2,
+                            SecretQuestion = 0,
+                            Surname = "Ronaldı",
+                            UserName = "Tsubasa333",
+                            Number = "333"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedTime = new DateTime(2020, 1, 3, 7, 3, 16, 259, DateTimeKind.Local).AddTicks(5902),
+                            EMail = "whaat2@gmail.com",
+                            IsDeleted = false,
+                            LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Okuttum",
+                            Password = "7ba212399865786bddeeae30bcca4d89e29eb10eb56d0100f1570a5a6d7415bc",
+                            RoleId = 2,
+                            SecretQuestion = 0,
+                            Surname = "Bro",
+                            UserName = "whaat2",
+                            Number = "222"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedTime = new DateTime(2020, 1, 3, 7, 3, 16, 259, DateTimeKind.Local).AddTicks(5971),
+                            EMail = "elveda26@gmail.com",
+                            IsDeleted = false,
+                            LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Yeter",
+                            Password = "d37ec7d7506f856d4dc1a40bc09509e0bd964331b2712f5cb7ca584d39575cae",
+                            RoleId = 2,
+                            SecretQuestion = 0,
+                            Surname = "Bukadar",
+                            UserName = "elveda26",
+                            Number = "262"
                         });
                 });
 
@@ -323,16 +412,32 @@ namespace ELESLMS.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedTime = new DateTime(2019, 12, 30, 22, 6, 14, 238, DateTimeKind.Local).AddTicks(7830),
+                            CreatedTime = new DateTime(2020, 1, 3, 7, 3, 16, 259, DateTimeKind.Local).AddTicks(7171),
                             EMail = "huseyinsimsek@gmail.com",
                             IsDeleted = false,
                             LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Hüseyin",
-                            Password = "717ed8efab4988cc10ffa7fbaf60dd89bcba6526e10f7c0d4dc16a87a103282c",
-                            PhoneNumber = 0,
+                            Password = "7f87373c2109e88f1bfcea954c222fa07a5a2b5ab030b0f18e1a3e25b344a4f1",
                             RoleId = 3,
+                            SecretQuestion = 0,
                             Surname = "Şimşek",
-                            UserName = "HocalarınHocası"
+                            UserName = "HocalarınHocası",
+                            Subject = "Programming"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedTime = new DateTime(2020, 1, 3, 7, 3, 16, 259, DateTimeKind.Local).AddTicks(7777),
+                            EMail = "hamdierkunt@gmail.com",
+                            IsDeleted = false,
+                            LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Hamdi",
+                            Password = "9df61ac8f46d4cda72ec2c09da76335bc3d9b95b9a3670beec3e3b2e1924b860",
+                            RoleId = 3,
+                            SecretQuestion = 0,
+                            Surname = "Erkunt",
+                            UserName = "Kral",
+                            Subject = "Algorythm"
                         });
                 });
 
@@ -350,7 +455,7 @@ namespace ELESLMS.Migrations
                     b.HasOne("ELESLMS.Data.Teacher", "Teacher")
                         .WithMany("Courses")
                         .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 

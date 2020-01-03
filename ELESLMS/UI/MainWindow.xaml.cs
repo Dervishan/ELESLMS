@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ELESLMS.Data;
 
 namespace ELESLMS.UI
 {
@@ -17,11 +18,30 @@ namespace ELESLMS.UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        User user;
+        public MainWindow(User user)
         {
             InitializeComponent();
-            LoginPage loginPage = new LoginPage();
-            MainFrame.Navigate(loginPage);
+            this.user = user;
+            MainFrame.Navigate(new CoursesPage(user));
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new PasswordChangePage(user));
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ManageAccountPage(user));
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+        }
+
     }
 }

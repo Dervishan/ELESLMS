@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
 C:\Users\zynct\Desktop\ELESLMS\ELESLMS\App.xaml
-3-1114047343
+11-1975740338
 
-19-2145272645
+39-377490637
 211396289502
-UI\LoginPage.xaml;UI\MainWindow.xaml;UI\RegisterPage.xaml;
+UI\CourseListWindow.xaml;UI\CoursesPage.xaml;UI\CreateCourseWindow.xaml;UI\LoginPage.xaml;UI\LoginWindow.xaml;UI\MainPage.xaml;UI\MainWindow.xaml;UI\ManageAccountPage.xaml;UI\PasswordChangePage.xaml;UI\PasswordResetPage.xaml;UI\RegisterPage.xaml;
 
 True
 

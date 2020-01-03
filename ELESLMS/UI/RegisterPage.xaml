@@ -5,10 +5,49 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ELESLMS.UI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="640" d:DesignWidth="1280"
       Title="RegisterPage">
 
-    <Grid>
-        
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition x:Name="rowSix" Height="0"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="15">Register</TextBlock>
+        <TextBlock Grid.Row="1" Margin="1" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center">Username:</TextBlock>
+        <TextBox x:Name="txtUserName" Grid.Row="1" Grid.Column="1" Margin="10" FontSize="20" Width="410" HorizontalAlignment="Left" VerticalContentAlignment="Center"></TextBox>
+        <TextBlock Grid.Row="2" Margin="1" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center">Name:</TextBlock>
+        <TextBox x:Name="txtName" Grid.Row="2" Grid.Column="1" Margin="10" FontSize="20" Width="410" HorizontalAlignment="Left" VerticalContentAlignment="Center"></TextBox>
+        <TextBlock Grid.Row="3" Margin="1" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center">Surname:</TextBlock>
+        <TextBox x:Name="txtSurname" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="20" Width="410" HorizontalAlignment="Left" VerticalContentAlignment="Center"></TextBox>
+        <TextBlock Grid.Row="4" Margin="1" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center">EMail:</TextBlock>
+        <TextBox x:Name="txtEMail" Grid.Row="4" Grid.Column="1" Margin="10" FontSize="20" Width="410" HorizontalAlignment="Left" VerticalContentAlignment="Center"></TextBox>
+        <TextBlock Grid.Row="5" Margin="1" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center">Position:</TextBlock>
+        <ComboBox x:Name="cbPosition" Margin="10" Grid.Row="5" Grid.Column="1" FontSize="20" Width="410" HorizontalAlignment="Left" VerticalContentAlignment="Center">
+            <ComboBoxItem Height="0"></ComboBoxItem>
+            <ComboBoxItem Height="0"></ComboBoxItem>
+            <ComboBoxItem Selected="ComboBoxItem_Selected">Student</ComboBoxItem>
+            <ComboBoxItem Selected="ComboBoxItem_Selected_1">Teacher</ComboBoxItem>
+        </ComboBox>
+        <TextBlock x:Name="txtBlock" Grid.Row="6" Margin="1" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center"></TextBlock>
+        <TextBox x:Name="txtStudentNumberAndProfession" Grid.Row="6" Grid.Column="1" Margin="10" FontSize="20" Width="410" HorizontalAlignment="Left" VerticalContentAlignment="Center"></TextBox>
+        <TextBlock Grid.Row="7" Margin="1" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center">Password:</TextBlock>
+        <PasswordBox x:Name="txtPassword" Grid.Row="7" Grid.Column="1" PasswordChar="*" Margin="10" FontSize="20" Width="410" HorizontalAlignment="Left" VerticalContentAlignment="Center"></PasswordBox>
+        <TextBlock Grid.Row="8" Margin="1" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center">Confirm Password:</TextBlock>
+        <PasswordBox x:Name="txtConfirmPassword" Grid.Row="8" Grid.Column="1" PasswordChar="*" Margin="10" FontSize="20" Width="410" HorizontalAlignment="Left" VerticalContentAlignment="Center"></PasswordBox>
+        <Button x:Name="btnRegister" Content="Register" Grid.Row="9" Grid.Column="2" Width="200" Margin="220,10,10,10" HorizontalAlignment="Left" Click="btnRegister_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="9" Grid.Column="2" Width="200" Margin="10" HorizontalAlignment="Left" Click="btnCancel_Click"></Button>
     </Grid>
 </Page>
