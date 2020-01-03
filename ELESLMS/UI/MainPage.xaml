@@ -1,0 +1,62 @@
+﻿<Page x:Class="ELESLMS.UI.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ELESLMS.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="640" d:DesignWidth="1280" Loaded="Page_Loaded"
+      Title="MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TabControl Margin="10" Grid.RowSpan="3" Grid.ColumnSpan="3">
+            <TabItem Header="Assignments" Width="100" Grid.Row="2" Grid.Column="2">
+                <Grid Background="#FFE5E5E5" Grid.Row="2" Grid.Column="2">
+                    <StackPanel Grid.Row="2" Grid.Column="2" Grid.RowSpan="999" Margin="1">
+                        <WrapPanel Grid.Row="2" Grid.Column="2">
+                            <Grid>
+                                <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+                            </Grid>
+                            <TextBlock x:Name="txtAssignmentName" Margin="1" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left">assignment name</TextBlock>
+                            <TextBlock x:Name="txtAssignmentDefinition" Margin="1" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left">assignment content</TextBlock>
+                            <TextBlock x:Name="txtCreatedDate" Margin="1" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                            <TextBlock x:Name="txtDeadline" Margin="1" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                        </WrapPanel>
+                        <WrapPanel>
+                            
+                        </WrapPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Blog" Width="100">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Grades" Width="100">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Name="tabPeople" Header="People" Width="100" GotFocus="tabPeople_GotFocus">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dbPeople" Margin="1" AutoGenerateColumns="False" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="200" Header="Student Number" FontSize="24" Binding="{Binding Student.Number}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="200" Header="Name" FontSize="24" Binding="{Binding Student.Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="200" Header="Surname" FontSize="24" Binding="{Binding Student.Surname}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="200" Header="Phone Number" FontSize="24" Binding="{Binding Student.PhoneNumber}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

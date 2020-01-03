@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows;
 using ELESLMS.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,61 @@ namespace ELESLMS.Service
             return loginUser;
         }
 
+        public void Register(int position, string name, string surname, string username, string email, string dependable, string password)
+        {
+            if (!UserExists(username))
+            {
+                if (position == 2)
+                {
+                    db.Users.Add(new Student()
+                    {
+                        Name = name,
+                        Surname = surname,
+                        UserName = username,
+                        EMail = email,
+                        Number = dependable,
+                        Password = hashPassword(password),
+                        CreatedTime = DateTime.Now
+                    });
+                    db.SaveChanges();
+                }
+                else if (position == 3)
+                {
+                    db.Users.Add(new Teacher()
+                    {
+                        Name = name,
+                        Surname = surname,
+                        UserName = username,
+                        EMail = email,
+                        Subject = dependable,
+                        Password = hashPassword(password),
+                        CreatedTime = DateTime.Now
+                    });
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Username is taken");
+            }
+        }
+        public User UserByUsername(string username)
+        {
+            return db.Users.FirstOrDefault(k => k.UserName == username);
+        }
+
+        public bool UserExists(string username)
+        {
+            var f = UserByUsername(username);
+            if (f==null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public bool CheckPassword(User user, string password)
         {
             return user.Password == hashPassword(password);
@@ -52,11 +108,36 @@ namespace ELESLMS.Service
             u.Password = hashPassword(password);
             db.SaveChanges();
         }
-
-        public bool Insert(User user)
+        public void ChangePassword(string username, string password)
         {
-            return true;
+            var f = UserByUsername(username);
+            f.Password = hashPassword(password);
+            db.SaveChanges();
         }
-
+        public void SetSecretQuestionAndAnswer(User user,int secretQuestion, string answer)
+        {
+            var u = db.Users.Find(user.Id);
+            u.SecretQuestion = (SecretQuestion)secretQuestion;
+            u.SecretAnswer = answer;
+            db.SaveChanges();
+        }
+        public bool SecretQuestionCheck(string username, int secretQuestion,string answer)
+        {
+            var f = UserByUsername(username);
+            if ((int)f.SecretQuestion==secretQuestion && f.SecretAnswer==answer)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public void DeleteUser(User user)
+        {
+            var u = db.Users.Find(user.Id);
+            u.IsDeleted = true;
+            db.SaveChanges();
+        }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
 C:\Users\zynct\Desktop\ELESLMS\ELESLMS\App.xaml
-11151548125
+11-1975740338
 
-16-495125703
-210-616967071
-MainWindow.xaml;
+38-1633109524
+211396289502
+UI\CourseListWindow.xaml;UI\CoursesPage.xaml;UI\CreateCourseWindow.xaml;UI\LoginPage.xaml;UI\LoginWindow.xaml;UI\MainPage.xaml;UI\MainWindow.xaml;UI\ManageAccountPage.xaml;UI\PasswordChangePage.xaml;UI\PasswordResetPage.xaml;UI\RegisterPage.xaml;
 
 False
 

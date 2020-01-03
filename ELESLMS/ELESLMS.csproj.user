@@ -7,7 +7,72 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
+    <Compile Update="UI\CourseListWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\CoursesPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\CreateCourseWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\LoginPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\ManageAccountPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\PasswordChangePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\PasswordResetPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\RegisterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="UI\CourseListWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\CoursesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\CreateCourseWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\LoginPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\MainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\ManageAccountPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\PasswordChangePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\PasswordResetPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\RegisterPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

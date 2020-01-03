@@ -8,6 +8,9 @@ namespace ELESLMS.Data
 {
     public class Course
     {
+        public Course()
+        {
+        }
         [Key]
         public int Id { get; set; }
         [Required]
@@ -16,7 +19,6 @@ namespace ELESLMS.Data
         public string Description { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime OpeningDate { get; set; }
-        public bool IsApproved { get; set; }
         public int TeacherId { get; set; }
         public Teacher Teacher { get; set; }
         [InverseProperty("Course")]

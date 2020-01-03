@@ -8,12 +8,12 @@ namespace ELESLMS.Data
 {
     public class Student : User
     {
-        public Student()
+        public Student() : base()
         {
             RoleId = 2;
         }
-        [Required]
-        public int Number { get; set; }
+        
+        public string Number { get; set; }
         [InverseProperty("Student")]
         public IList<StudentCourse> StudentCourses { get; set; }
     }
